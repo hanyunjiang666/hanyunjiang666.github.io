@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Hanyun Jiang - Graduate student at Zhejiang University working on AI for Code, LLM agents, and repository-level code optimization." />
+  <title>Hanyun Jiang</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #111827;
+      --muted: #5b6472;
+      --line: #e5e7eb;
+      --card: #f8fafc;
+      --accent: #2563eb;
+      --accent-soft: #eff6ff;
+      --max: 980px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+    nav {
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand { font-weight: 700; color: var(--text); letter-spacing: -0.02em; }
+    .nav-links { display: flex; gap: 20px; font-size: 14px; }
+    .nav-links a { color: var(--muted); }
+    .hero {
+      padding: 72px 0 48px;
+      display: grid;
+      grid-template-columns: 1fr 210px;
+      gap: 48px;
+      align-items: center;
+    }
+    .eyebrow {
+      display: inline-flex;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+    h1 {
+      margin: 0 0 12px;
+      font-size: 48px;
+      line-height: 1.05;
+      letter-spacing: -0.045em;
+    }
+    .subtitle {
+      margin: 0 0 20px;
+      color: var(--muted);
+      font-size: 19px;
+    }
+    .bio { max-width: 700px; color: #374151; font-size: 16px; }
+    .avatar {
+      width: 210px;
+      height: 210px;
+      border-radius: 28px;
+      background: linear-gradient(135deg, #dbeafe, #e0e7ff 45%, #f5f3ff);
+      border: 1px solid var(--line);
+      box-shadow: 0 20px 50px rgba(37,99,235,.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #64748b;
+      font-weight: 600;
+      text-align: center;
+      padding: 20px;
+    }
+    .links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 9px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--text);
+      background: #fff;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .btn.primary { background: var(--text); color: #fff; border-color: var(--text); }
+    section { padding: 34px 0; border-top: 1px solid var(--line); }
+    h2 {
+      margin: 0 0 18px;
+      font-size: 25px;
+      letter-spacing: -0.025em;
+    }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .card {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--card);
+    }
+    .card h3 { margin: 0 0 6px; font-size: 17px; }
+    .card p { margin: 0; color: var(--muted); font-size: 15px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 10px; }
+    .tag {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      color: #374151;
+      font-size: 14px;
+    }
+    .pub { padding: 16px 0; border-bottom: 1px solid var(--line); }
+    .pub:last-child { border-bottom: none; }
+    .pub-title { font-weight: 700; }
+    .pub-meta { color: var(--muted); font-size: 14px; margin-top: 2px; }
+    .news { margin: 0; padding-left: 20px; color: #374151; }
+    .news li { margin: 8px 0; }
+    footer {
+      padding: 38px 0 54px;
+      color: var(--muted);
+      font-size: 14px;
+      border-top: 1px solid var(--line);
+    }
+    @media (max-width: 760px) {
+      nav { height: auto; padding: 16px 0; align-items: flex-start; }
+      .nav-links { flex-wrap: wrap; gap: 10px 16px; }
+      .hero { grid-template-columns: 1fr; padding-top: 46px; }
+      h1 { font-size: 38px; }
+      .avatar { width: 170px; height: 170px; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a class="brand" href="#top">Hanyun Jiang</a>
+        <div class="nav-links">
+          <a href="#research">Research</a>
+          <a href="#projects">Projects</a>
+          <a href="#publications">Publications</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" class="container">
+    <div class="hero">
+      <div>
+        <div class="eyebrow">AI for Code · LLM Agents · Code Optimization</div>
+        <h1>Hanyun Jiang</h1>
+        <p class="subtitle">Graduate Student, College of Computer Science and Technology, Zhejiang University</p>
+        <p class="bio">
+          I work on AI for Code, with a focus on repository-level code optimization, LLM agentic workflows,
+          skill distillation, and performance benchmarking. My research explores how intelligent agents can
+          profile, reason about, and optimize real-world codebases through reusable optimization knowledge.
+        </p>
+        <div class="links">
+          <a class="btn primary" href="#publications">Publications</a>
+          <a class="btn" href="#projects">Projects</a>
+          <a class="btn" href="mailto:your.email@zju.edu.cn">Email</a>
+          <a class="btn" href="#">GitHub</a>
+          <a class="btn" href="#">Google Scholar</a>
+          <a class="btn" href="#">CV</a>
+        </div>
+      </div>
+      <div class="avatar">Replace with<br />your photo</div>
+    </div>
+
+    <section id="news">
+      <h2>News</h2>
+      <ul class="news">
+        <li><strong>2026</strong> — Preparing research on reusable optimization skills for repository-level code optimization.</li>
+        <li><strong>2026</strong> — Working on agentic workflows for profiling-guided code optimization.</li>
+      </ul>
+    </section>
+
+    <section id="research">
+      <h2>Research Interests</h2>
+      <div class="tags">
+        <span class="tag">AI for Code</span>
+        <span class="tag">Repository-Level Code Optimization</span>
+        <span class="tag">LLM Agents</span>
+        <span class="tag">Skill Distillation</span>
+        <span class="tag">Software Engineering</span>
+        <span class="tag">Performance Benchmarking</span>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Selected Projects</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Pivot</h3>
+          <p>A skill-based agent framework for repository-level code optimization, emphasizing reusable optimization knowledge and structured reasoning.</p>
+        </article>
+        <article class="card">
+          <h3>HintPilot</h3>
+          <p>An LLM-driven workflow for analyzing and improving complex codebases through profiling, reasoning, and iterative optimization.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="publications">
+      <h2>Publications</h2>
+      <div class="pub">
+        <div class="pub-title">Add your paper title here</div>
+        <div class="pub-meta">Authors. Conference / Journal, Year. <a href="#">PDF</a> · <a href="#">Code</a> · <a href="#">BibTeX</a></div>
+      </div>
+      <div class="pub">
+        <div class="pub-title">Add your paper title here</div>
+        <div class="pub-meta">Authors. Conference / Journal, Year. <a href="#">PDF</a> · <a href="#">Code</a> · <a href="#">BibTeX</a></div>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <div class="card">
+        <h3>Zhejiang University</h3>
+        <p>Graduate student in Computer Science and Technology.</p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        Email: <a href="mailto:your.email@zju.edu.cn">your.email@zju.edu.cn</a><br />
+        GitHub: <a href="#">Add your GitHub profile</a><br />
+        Google Scholar: <a href="#">Add your Scholar profile</a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© 2026 Hanyun Jiang. Last updated: 2026.</div>
+  </footer>
+</body>
+</html>
