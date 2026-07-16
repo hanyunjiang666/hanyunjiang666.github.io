@@ -79,16 +79,11 @@
       width: 210px;
       height: 210px;
       border-radius: 28px;
-      background: linear-gradient(135deg, #dbeafe, #e0e7ff 45%, #f5f3ff);
       border: 1px solid var(--line);
       box-shadow: 0 20px 50px rgba(37,99,235,.12);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #64748b;
-      font-weight: 600;
-      text-align: center;
-      padding: 20px;
+      display: block;
+      object-fit: cover;
+      object-position: 35% center;
     }
     .links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
     .btn {
@@ -184,7 +179,7 @@
           <a class="btn" href="#">CV</a>
         </div>
       </div>
-      <div class="avatar">Replace with<br />your photo</div>
+      <img class="avatar" src="images/profile.jpg" alt="Hanyun Jiang" />
     </div>
 
     <!-- <section id="news">
@@ -225,11 +220,11 @@
       <h2>Publications</h2>
       <div class="pub">
         <div class="pub-title">HintPilot: LLM-based Compiler Hint Synthesis for Code Optimization</div>
-        <div class="pub-meta"><b>Hanyun Jiang</b>; Peisen Yao; Kaiyue Li; Tingting Lin; Chengpeng Wang; Kui Ren. Findings of the Association for Computational Linguistics: ACL, 2026. <a href="#">PDF</a> · <a href="#">Code</a> · <a href="#">BibTeX</a></div>
+        <div class="pub-meta"><b>Hanyun Jiang</b>; Peisen Yao; Kaiyue Li; Tingting Lin; Chengpeng Wang; Kui Ren. Findings of the Association for Computational Linguistics: ACL, 2026. <a href="https://aclanthology.org/2026.findings-acl.1251.pdf">PDF</a> · <a href="https://github.com/ZJU-PL/hintpilot">Code</a> · <a href="https://aclanthology.org/2026.findings-acl.1251.bib">BibTeX</a></div>
       </div>
       <div class="pub">
         <div class="pub-title">Compiler Optimization-Based SMT Simplifications: An In-Depth Study</div>
-        <div class="pub-meta"><b>Hanyun Jiang</b>; Peisen Yao; Jiachen Lu; Yongwang Zhao; Kui Ren. ACM Transactions on Software Engineering and Methodology, 2026. <a href="#">PDF</a> · <a href="#">Code</a> · <a href="#">BibTeX</a></div>
+        <div class="pub-meta"><b>Hanyun Jiang</b>; Peisen Yao; Jiachen Lu; Yongwang Zhao; Kui Ren. ACM Transactions on Software Engineering and Methodology, 2026. <a href="https://dl.acm.org/doi/pdf/10.1145/3795879">PDF</a> · <a href="https://github.com/ZJU-PL/lotus/tree/main/lib/Solvers/SMT/TUNA">Code</a> · <a href="https://api.crossref.org/works/10.1145/3795879/transform/application/x-bibtex">BibTeX</a></div>
       </div>
     </section>
 
@@ -257,8 +252,8 @@
       <div class="card">
         <ul>
           <li>Zhejiang Province Outstanding Graduate, 2025</li>
-          <li>National Scholarship, 2024</li>
           <li>Outstanding Graduate of Zhejiang University, 2025</li>
+          <li>National Scholarship, 2024</li>
           <li>National Scholarship, 2022</li>
         </ul>
       </div>
