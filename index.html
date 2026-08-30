@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Hanyun Jiang - First-year Graduate student at Zhejiang University working on AI for Code, LLM agents, and repository-level code optimization." />
+  <meta name="description" content="Hanyun Jiang - Second-year graduate student at Zhejiang University working on AI for Code, code agents, and repository-level code optimization." />
   <title>Hanyun Jiang</title>
   <style>
     :root {
@@ -127,6 +127,23 @@
     .pub:last-child { border-bottom: none; }
     .pub-title { font-weight: 700; }
     .pub-meta { color: var(--muted); font-size: 14px; margin-top: 2px; }
+    .education-card { padding: 0 22px; background: #fff; }
+    .education-item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 18px;
+      padding: 20px 0;
+    }
+    .education-item + .education-item { border-top: 1px solid var(--line); }
+    .education-item h3 { margin-bottom: 3px; font-size: 18px; }
+    .education-degree { color: var(--text); font-weight: 650; }
+    .education-detail { margin-top: 3px !important; }
+    .education-date {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
     .news { margin: 0; padding-left: 20px; color: #374151; }
     .news li { margin: 8px 0; }
     footer {
@@ -143,6 +160,7 @@
       h1 { font-size: 38px; }
       .avatar { width: 170px; height: 170px; }
       .grid { grid-template-columns: 1fr; }
+      .education-item { grid-template-columns: 1fr; gap: 6px; }
     }
   </style>
 </head>
@@ -164,11 +182,11 @@
   <main id="top" class="container">
     <div class="hero">
       <div>
-        <div class="eyebrow">AI for Code · LLM Agents · Code Optimization</div>
+        <div class="eyebrow">AI for Code · Code Agents · Code Optimization</div>
         <h1>Hanyun Jiang</h1>
-        <p class="subtitle">Graduate Student, College of Computer Science and Technology, Zhejiang University</p>
+        <p class="subtitle">Second-year Graduate Student, College of Computer Science and Technology, Zhejiang University</p>
         <p class="bio">
-          I am a first-year graduate student working on AI for Code, with a particular focus on code optimization and LLM-based agents, under the supervision of Prof. <a href="https://rainoftime.github.io/">Peisen Yao</a>. My research aims to develop intelligent agents capable of autonomously understanding, reasoning about, and improving software systems through a wide range of code-centric tasks. Feel free to reach out if you'd like to collaborate with me.
+          I am a second-year graduate student working on AI for Code, with a particular focus on code optimization and code agents, under the supervision of Prof. <a href="https://rainoftime.github.io/">Peisen Yao</a>. My research aims to develop intelligent agents capable of autonomously understanding, reasoning about, and improving software systems through a wide range of code-centric tasks. Feel free to reach out if you'd like to collaborate with me.
         </p>
         <div class="links">
           <a class="btn primary" href="#publications">Publications</a>
@@ -193,7 +211,7 @@
     <section id="research">
       <h2>Research Interests</h2>
       <div class="tags">
-        <span class="tag">LLM Agents</span>
+        <span class="tag">Code Agents</span>
         <span class="tag">AI for Code</span>
         <span class="tag">Code Efficiency</span>
         <span class="tag">Post Training</span>
@@ -229,18 +247,23 @@
     <section id="education">
       <h2>Education</h2>
 
-      <div class="card">
-        <h3>Zhejiang University</h3>
+      <div class="card education-card">
+        <article class="education-item">
+          <div>
+            <h3>Zhejiang University</h3>
+            <p class="education-degree">Master Student, Computer Science and Technology</p>
+            <p class="education-detail">The State Key Laboratory of Blockchain and Data Security</p>
+          </div>
+          <time class="education-date">Sep. 2025 – Jun. 2028</time>
+        </article>
 
-        <p>
-          <strong>Graduate Student</strong>, The State Key Laboratory of Blockchain and Data Security,
-          Computer Science and Technology, 2025.09–2028.06.
-        </p>
-
-        <p>
-          <strong>Bachelor</strong>, Computer Science and Technology,
-          2021.09–2025.06.
-        </p>
+        <article class="education-item">
+          <div>
+            <h3>Zhejiang University</h3>
+            <p class="education-degree">B.Eng., Computer Science and Technology</p>
+          </div>
+          <time class="education-date">Sep. 2021 – Jun. 2025</time>
+        </article>
       </div>
     </section>
 
