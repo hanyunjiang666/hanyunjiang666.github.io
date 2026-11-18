@@ -97,6 +97,8 @@
     }
     .education-item:last-child { padding-bottom: 0; }
     .education-item h3 { margin: 0 0 2px; font-size: 16px; font-weight: 650; }
+    .education-item .organization { display: flex; align-items: center; gap: 10px; }
+    .organization img { width: 28px; height: 28px; object-fit: contain; flex-shrink: 0; }
     .education-item p { margin: 2px 0 0; font-size: 14px; }
     .education-detail { color: var(--muted); }
     .education-date { padding-top: 2px; font-size: 13px; color: var(--muted); white-space: nowrap; }
@@ -147,9 +149,9 @@
           <a href="#about">About Me</a>
           <a href="#research">Research</a>
           <a href="#publications">Publications</a>
-          <a href="#internship">Internship</a>
           <a href="#education">Education</a>
           <a href="#awards">Awards</a>
+          <a href="#internship">Internship</a>
           <a href="#contact">Contact</a>
         </div>
       </nav>
@@ -231,29 +233,6 @@
         </div>
       </section>
 
-      <section id="internship">
-        <h2>Internship</h2>
-
-        <div class="entry-list">
-          <article class="education-item">
-            <div>
-              <h3>Alibaba Group, Qwen</h3>
-              <p class="education-degree">Post Training Algorithm Intern</p>
-              <p class="education-detail">Focus: Code</p>
-            </div>
-            <time class="education-date">Aug. 2026 – Present</time>
-          </article>
-
-          <article class="education-item">
-            <div>
-              <h3>Microsoft Research, DKI</h3>
-              <p class="education-degree">Research Intern</p>
-            </div>
-            <time class="education-date">Apr. 2026 – Aug. 2026</time>
-          </article>
-        </div>
-      </section>
-
       <section id="education">
         <h2>Education</h2>
 
@@ -286,6 +265,29 @@
             <li>Outstanding Graduate of Zhejiang University, 2025</li>
             <li>National Scholarship (2022, 2024, 2026)</li>
           </ul>
+        </div>
+      </section>
+
+      <section id="internship">
+        <h2>Internship</h2>
+
+        <div class="entry-list">
+          <article class="education-item">
+            <div>
+              <h3 class="organization"><img src="images/qwen.png" alt="" width="28" height="28" />Alibaba Group, Qwen</h3>
+              <p class="education-degree">Post Training Algorithm Intern</p>
+              <p class="education-detail">Focus: Code</p>
+            </div>
+            <time class="education-date">Aug. 2026 – Present</time>
+          </article>
+
+          <article class="education-item">
+            <div>
+              <h3 class="organization"><img src="images/microsoft.png" alt="" width="28" height="28" />Microsoft Research, DKI</h3>
+              <p class="education-degree">Research Intern</p>
+            </div>
+            <time class="education-date">Apr. 2026 – Aug. 2026</time>
+          </article>
         </div>
       </section>
 
