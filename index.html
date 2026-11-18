@@ -7,316 +7,304 @@
   <title>Hanyun Jiang</title>
   <style>
     :root {
-      --bg: #ffffff;
-      --text: #111827;
-      --muted: #5b6472;
-      --line: #e5e7eb;
-      --card: #f8fafc;
-      --accent: #2563eb;
-      --accent-soft: #eff6ff;
-      --max: 980px;
+      --text: #494e52;
+      --muted: #6f777d;
+      --line: #f0f1f2;
+      --accent: #2685a2;
+      --max: 1200px;
     }
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; scroll-padding-top: 100px; }
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: var(--bg);
+      background: #fff;
       color: var(--text);
-      line-height: 1.65;
+      font: 16px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      overflow-wrap: break-word;
     }
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    .container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 32px; }
     header {
       position: sticky;
       top: 0;
       z-index: 10;
-      background: rgba(255,255,255,.92);
-      backdrop-filter: blur(12px);
+      background: #fff;
       border-bottom: 1px solid var(--line);
     }
-    nav {
-      height: 64px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-    .brand { font-weight: 700; color: var(--text); letter-spacing: -0.02em; }
-    .nav-links { display: flex; gap: 20px; font-size: 14px; }
-    .nav-links a { color: var(--muted); }
-    .hero {
-      padding: 72px 0 48px;
+    nav { min-height: 76px; display: flex; align-items: center; gap: 48px; }
+    .brand { color: var(--text); font-size: 19px; font-weight: 700; white-space: nowrap; }
+    .nav-links { display: flex; gap: 25px; font-size: 15px; }
+    .nav-links a { color: var(--muted); white-space: nowrap; }
+    .nav-links a:hover { color: var(--text); }
+    .page-layout {
       display: grid;
-      grid-template-columns: 1fr 210px;
-      gap: 48px;
-      align-items: center;
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: 60px;
+      align-items: start;
+      padding-top: 44px;
+      padding-bottom: 56px;
     }
-    .eyebrow {
-      display: inline-flex;
-      padding: 5px 10px;
-      border-radius: 999px;
-      background: var(--accent-soft);
-      color: var(--accent);
-      font-size: 13px;
-      font-weight: 600;
-      margin-bottom: 18px;
-    }
-    h1 {
-      margin: 0 0 12px;
-      font-size: 48px;
-      line-height: 1.05;
-      letter-spacing: -0.045em;
-    }
-    .subtitle {
-      margin: 0 0 20px;
-      color: var(--muted);
-      font-size: 19px;
-    }
-    .bio { max-width: 700px; color: #374151; font-size: 16px; }
+    .profile { position: sticky; top: 112px; }
     .avatar {
-      width: 210px;
-      height: 210px;
-      border-radius: 28px;
-      border: 1px solid var(--line);
-      box-shadow: 0 20px 50px rgba(37,99,235,.12);
       display: block;
+      width: 176px;
+      height: 176px;
+      padding: 5px;
+      border: 1px solid #e5e7e9;
+      border-radius: 50%;
       object-fit: cover;
       object-position: 35% center;
+      margin-bottom: 19px;
     }
-    .links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 9px 14px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      color: var(--text);
-      background: #fff;
-      font-size: 14px;
-      font-weight: 600;
-    }
-    .btn.primary { background: var(--text); color: #fff; border-color: var(--text); }
-    section { padding: 34px 0; border-top: 1px solid var(--line); }
+    .profile h1 { margin: 0 0 7px; font-size: 23px; line-height: 1.3; color: #333; }
+    .profile-role { margin: 0 0 4px; font-size: 14px; }
+    .profile-affiliation { margin: 0; font-size: 13px; line-height: 1.65; }
+    .profile-links { display: grid; gap: 10px; margin: 23px 0 0; padding: 0; list-style: none; font-size: 13px; }
+    .profile-links li, .profile-links a { display: flex; align-items: center; gap: 10px; }
+    .profile-links a { color: var(--text); }
+    .profile-links svg { width: 15px; height: 15px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 1.6; }
+    .page-content { min-width: 0; }
+    section { margin: 0 0 35px; }
+    section:last-child { margin-bottom: 0; }
     h2 {
-      margin: 0 0 18px;
+      margin: 0 0 17px;
+      padding-bottom: 9px;
+      border-bottom: 1px solid #e6e8e9;
       font-size: 25px;
-      letter-spacing: -0.025em;
+      line-height: 1.35;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #333;
     }
-    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
-    .card {
-      padding: 18px;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      background: var(--card);
-    }
-    .card h3 { margin: 0 0 6px; font-size: 17px; }
-    .card p { margin: 0; color: var(--muted); font-size: 15px; }
-    .tags { display: flex; flex-wrap: wrap; gap: 10px; }
-    .tag {
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: var(--card);
-      border: 1px solid var(--line);
-      color: #374151;
-      font-size: 14px;
-    }
-    .pub { padding: 16px 0; border-bottom: 1px solid var(--line); }
-    .pub:last-child { border-bottom: none; }
-    .pub-title { font-weight: 700; }
-    .pub-meta { color: var(--muted); font-size: 14px; margin-top: 2px; }
-    .education-card { padding: 0 22px; background: #fff; }
+    p { margin: 0 0 14px; }
+    .bio { margin-bottom: 0; }
+    .research-list { display: flex; flex-wrap: wrap; gap: 6px 26px; padding-left: 20px; margin: 0; }
+    .research-list li { padding-right: 8px; }
+    .pub { margin-bottom: 24px; }
+    .pub:last-child { margin-bottom: 0; }
+    .pub-title { font-size: 16px; font-weight: 650; line-height: 1.5; }
+    .pub-meta { margin-top: 5px; font-size: 14px; }
+    .pub-meta p { margin: 3px 0; }
+    .pub-venue { color: var(--muted); font-style: italic; }
+    .paper-links { display: flex; gap: 14px; margin-top: 5px; font-size: 13px; }
     .education-item {
       display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 18px;
-      padding: 20px 0;
+      grid-template-columns: minmax(0, 1fr) auto;
+      column-gap: 24px;
+      padding: 0 0 20px;
     }
-    .education-item + .education-item { border-top: 1px solid var(--line); }
-    .education-item h3 { margin-bottom: 3px; font-size: 18px; }
-    .education-degree { color: var(--text); font-weight: 650; }
-    .education-detail { margin-top: 3px !important; }
-    .education-date {
-      color: var(--muted);
-      font-size: 14px;
-      font-weight: 600;
-      white-space: nowrap;
+    .education-item:last-child { padding-bottom: 0; }
+    .education-item h3 { margin: 0 0 2px; font-size: 16px; font-weight: 650; }
+    .education-item p { margin: 2px 0 0; font-size: 14px; }
+    .education-detail { color: var(--muted); }
+    .education-date { padding-top: 2px; font-size: 13px; color: var(--muted); white-space: nowrap; }
+    .award-list { margin: 0; padding-left: 20px; font-size: 15px; }
+    .award-list li { margin: 5px 0; }
+    footer { background: #f5f6f7; border-top: 1px solid #e6e8e9; padding: 24px 0; color: var(--muted); font-size: 12px; }
+    .footer-content { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; }
+    @media (max-width: 1050px) {
+      nav { gap: 28px; }
+      .nav-links { gap: 18px; font-size: 14px; }
+      .page-layout { grid-template-columns: 190px minmax(0, 1fr); gap: 36px; }
     }
-    .news { margin: 0; padding-left: 20px; color: #374151; }
-    .news li { margin: 8px 0; }
-    footer {
-      padding: 38px 0 54px;
-      color: var(--muted);
-      font-size: 14px;
-      border-top: 1px solid var(--line);
+    @media (max-width: 800px) {
+      html { scroll-padding-top: 120px; }
+      .container { padding-left: 22px; padding-right: 22px; }
+      nav { display: block; padding: 14px 0 0; }
+      .brand { display: inline-block; font-size: 18px; }
+      .nav-links { overflow-x: auto; gap: 21px; padding: 10px 0 13px; }
+      .page-layout { grid-template-columns: 1fr; gap: 33px; padding-top: 28px; padding-bottom: 36px; }
+      .profile { position: static; display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 0 20px; }
+      .avatar { width: 110px; height: 110px; grid-row: 1 / 3; margin: 0; padding: 3px; }
+      .profile h1 { font-size: 22px; }
+      .profile-affiliation { max-width: 340px; }
+      .profile-links { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 17px; }
+      h2 { font-size: 23px; }
     }
-    @media (max-width: 760px) {
-      nav { height: auto; padding: 16px 0; align-items: flex-start; }
-      .nav-links { flex-wrap: wrap; gap: 10px 16px; }
-      .hero { grid-template-columns: 1fr; padding-top: 46px; }
-      h1 { font-size: 38px; }
-      .avatar { width: 170px; height: 170px; }
-      .grid { grid-template-columns: 1fr; }
-      .education-item { grid-template-columns: 1fr; gap: 6px; }
+    @media (max-width: 480px) {
+      body { font-size: 15px; }
+      .container { padding-left: 18px; padding-right: 18px; }
+      .profile { grid-template-columns: 88px minmax(0, 1fr); gap: 0 16px; }
+      .avatar { width: 88px; height: 88px; }
+      .profile h1 { font-size: 21px; }
+      .education-item { grid-template-columns: 1fr; gap: 5px; }
+      .education-date { grid-row: 1; }
+      .research-list { display: block; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
     }
   </style>
 </head>
 <body>
   <header>
     <div class="container">
-      <nav>
+      <nav aria-label="Main navigation">
         <a class="brand" href="#top">Hanyun Jiang</a>
         <div class="nav-links">
+          <a href="#about">About Me</a>
           <a href="#research">Research</a>
-          <a href="#projects">Projects</a>
           <a href="#publications">Publications</a>
           <a href="#internship">Internship</a>
+          <a href="#education">Education</a>
+          <a href="#awards">Awards</a>
           <a href="#contact">Contact</a>
         </div>
       </nav>
     </div>
   </header>
 
-  <main id="top" class="container">
-    <div class="hero">
-      <div>
-        <div class="eyebrow">AI for Code · Code Agents · Code Optimization</div>
+  <main id="top" class="container page-layout">
+    <aside class="profile" aria-label="Personal profile">
+      <img class="avatar" src="images/profile.jpg" alt="Hanyun Jiang" width="176" height="176" />
+      <div class="profile-summary">
         <h1>Hanyun Jiang</h1>
-        <p class="subtitle">Second-year Graduate Student, College of Computer Science and Technology, Zhejiang University</p>
+        <p class="profile-role">Second-year Graduate Student</p>
+        <p class="profile-affiliation">College of Computer Science and Technology<br />Zhejiang University</p>
+      </div>
+      <ul class="profile-links">
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z" /><circle cx="12" cy="10" r="2.5" /></svg>Hangzhou, China</li>
+        <li><a href="mailto:jhanyun@zju.edu.cn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m3 6 9 7 9-7" /></svg>Email</a></li>
+        <li><a href="https://github.com/hanyunjiang666"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1-4-2-6-2m12 5v-4c0-1 .1-1.5-.5-2 3-.4 6-1.5 6-6a5 5 0 0 0-1.4-3.5 4.5 4.5 0 0 0-.1-3.5s-1.2-.4-4 1.4a13 13 0 0 0-7 0C5.2 1.6 4 2 4 2a4.5 4.5 0 0 0-.1 3.5A5 5 0 0 0 2.5 9c0 4.5 3 5.6 6 6-.6.5-.6 1.2-.5 2v5" /></svg>GitHub</a></li>
+      </ul>
+    </aside>
+
+    <div class="page-content">
+      <section id="about">
+        <h2>About Me</h2>
         <p class="bio">
           I am a second-year graduate student working on AI for Code, with a particular focus on code optimization and code agents, under the supervision of Prof. <a href="https://rainoftime.github.io/">Peisen Yao</a>. My research aims to develop intelligent agents capable of autonomously understanding, reasoning about, and improving software systems through a wide range of code-centric tasks. Feel free to reach out if you'd like to collaborate with me.
         </p>
-        <div class="links">
-          <a class="btn primary" href="#publications">Publications</a>
-          <a class="btn" href="#projects">Projects</a>
-          <a class="btn" href="mailto:jhanyun@zju.edu.cn">Email</a>
-          <a class="btn" href="#">GitHub</a>
-          <a class="btn" href="#">Google Scholar</a>
-          <a class="btn" href="#">CV</a>
-        </div>
-      </div>
-      <img class="avatar" src="images/profile.jpg" alt="Hanyun Jiang" />
-    </div>
+      </section>
 
-    <!-- <section id="news">
-      <h2>News</h2>
-      <ul class="news">
-        <li><strong>2026</strong> — Preparing research on reusable optimization skills for repository-level code optimization.</li>
-        <li><strong>2026</strong> — Working on agentic workflows for profiling-guided code optimization.</li>
-      </ul>
-    </section> -->
-
-    <section id="research">
-      <h2>Research Interests</h2>
-      <div class="tags">
-        <span class="tag">Code Agents</span>
-        <span class="tag">AI for Code</span>
-        <span class="tag">Code Efficiency</span>
-        <span class="tag">Post Training</span>
-      </div>
-    </section>
-
-    <!-- <section id="projects">
-      <h2>Selected Projects</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>Pivot</h3>
-          <p>A skill-based agent framework for repository-level code optimization, emphasizing reusable optimization knowledge and structured reasoning.</p>
-        </article>
-        <article class="card">
-          <h3>HintPilot</h3>
-          <p>An LLM-driven workflow for analyzing and improving complex codebases through profiling, reasoning, and iterative optimization.</p>
-        </article>
-      </div>
-    </section> -->
-
-    <section id="publications">
-      <h2>Publications</h2>
-      <div class="pub">
-        <div class="pub-title">HintPilot: LLM-based Compiler Hint Synthesis for Code Optimization</div>
-        <div class="pub-meta"><b>Hanyun Jiang</b>; Peisen Yao; Kaiyue Li; Tingting Lin; Chengpeng Wang; Kui Ren. Findings of the Association for Computational Linguistics: ACL, 2026. <a href="https://aclanthology.org/2026.findings-acl.1251.pdf">PDF</a> · <a href="https://github.com/ZJU-PL/hintpilot">Code</a> · <a href="https://aclanthology.org/2026.findings-acl.1251.bib">BibTeX</a></div>
-      </div>
-      <div class="pub">
-        <div class="pub-title">Compiler Optimization-Based SMT Simplifications: An In-Depth Study</div>
-        <div class="pub-meta"><b>Hanyun Jiang</b>; Peisen Yao; Jiachen Lu; Yongwang Zhao; Kui Ren. ACM Transactions on Software Engineering and Methodology, 2026. <a href="https://dl.acm.org/doi/pdf/10.1145/3795879">PDF</a> · <a href="https://github.com/ZJU-PL/lotus/tree/main/lib/Solvers/SMT/TUNA">Code</a> · <a href="https://api.crossref.org/works/10.1145/3795879/transform/application/x-bibtex">BibTeX</a></div>
-      </div>
-    </section>
-
-    <section id="internship">
-      <h2>Internship</h2>
-
-      <div class="card education-card">
-        <article class="education-item">
-          <div>
-            <h3>Alibaba Group, Qwen</h3>
-            <p class="education-degree">Post Training Algorithm Intern</p>
-            <p class="education-detail">Focus: Code</p>
-          </div>
-          <time class="education-date">Aug. 2026 – Present</time>
-        </article>
-
-        <article class="education-item">
-          <div>
-            <h3>Microsoft Research, DKI</h3>
-            <p class="education-degree">Research Intern</p>
-          </div>
-          <time class="education-date">Apr. 2026 – Aug. 2026</time>
-        </article>
-      </div>
-    </section>
-
-    <section id="education">
-      <h2>Education</h2>
-
-      <div class="card education-card">
-        <article class="education-item">
-          <div>
-            <h3>Zhejiang University</h3>
-            <p class="education-degree">Master Student, Computer Science and Technology</p>
-            <p class="education-detail">The State Key Laboratory of Blockchain and Data Security</p>
-          </div>
-          <time class="education-date">Sep. 2025 – Jun. 2028</time>
-        </article>
-
-        <article class="education-item">
-          <div>
-            <h3>Zhejiang University</h3>
-            <p class="education-degree">B.Eng., Computer Science and Technology</p>
-          </div>
-          <time class="education-date">Sep. 2021 – Jun. 2025</time>
-        </article>
-      </div>
-    </section>
-
-    <section id="awards">
-      <h2>Awards</h2>
-
-      <div class="card">
-        <ul>
-          <li>Zhejiang Province Outstanding Graduate, 2025</li>
-          <li>Outstanding Graduate of Zhejiang University, 2025</li>
-          <li>National Scholarship (2022, 2024, 2026)</li>
+      <!-- <section id="news">
+        <h2>News</h2>
+        <ul class="news">
+          <li><strong>2026</strong> — Preparing research on reusable optimization skills for repository-level code optimization.</li>
+          <li><strong>2026</strong> — Working on agentic workflows for profiling-guided code optimization.</li>
         </ul>
-      </div>
-    </section>
+      </section> -->
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>
-        Email: <a href="mailto:jhanyun@zju.edu.cn">jhanyun@zju.edu.cn</a><br />
-        <!-- GitHub: <a href="#"></a><br />
-        Google Scholar: <a href="#"></a> -->
-      </p>
-    </section>
+      <section id="research">
+        <h2>Research Interests</h2>
+        <ul class="research-list">
+          <li>Code Agents</li>
+          <li>AI for Code</li>
+          <li>Code Efficiency</li>
+          <li>Post Training</li>
+        </ul>
+      </section>
+
+      <!-- <section id="projects">
+        <h2>Selected Projects</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>Pivot</h3>
+            <p>A skill-based agent framework for repository-level code optimization, emphasizing reusable optimization knowledge and structured reasoning.</p>
+          </article>
+          <article class="card">
+            <h3>HintPilot</h3>
+            <p>An LLM-driven workflow for analyzing and improving complex codebases through profiling, reasoning, and iterative optimization.</p>
+          </article>
+        </div>
+      </section> -->
+
+      <section id="publications">
+        <h2>Publications</h2>
+        <div class="pub">
+          <div class="pub-title"><a href="https://aclanthology.org/2026.findings-acl.1251.pdf">HintPilot: LLM-based Compiler Hint Synthesis for Code Optimization</a></div>
+          <div class="pub-meta">
+            <p><b>Hanyun Jiang</b>; Peisen Yao; Kaiyue Li; Tingting Lin; Chengpeng Wang; Kui Ren.</p>
+            <p class="pub-venue">Findings of the Association for Computational Linguistics: ACL, 2026.</p>
+          </div>
+          <div class="paper-links"><a href="https://aclanthology.org/2026.findings-acl.1251.pdf">[PDF]</a><a href="https://github.com/ZJU-PL/hintpilot">[Code]</a><a href="https://aclanthology.org/2026.findings-acl.1251.bib">[BibTeX]</a></div>
+        </div>
+        <div class="pub">
+          <div class="pub-title"><a href="https://dl.acm.org/doi/pdf/10.1145/3795879">Compiler Optimization-Based SMT Simplifications: An In-Depth Study</a></div>
+          <div class="pub-meta">
+            <p><b>Hanyun Jiang</b>; Peisen Yao; Jiachen Lu; Yongwang Zhao; Kui Ren.</p>
+            <p class="pub-venue">ACM Transactions on Software Engineering and Methodology, 2026.</p>
+          </div>
+          <div class="paper-links"><a href="https://dl.acm.org/doi/pdf/10.1145/3795879">[PDF]</a><a href="https://github.com/ZJU-PL/lotus/tree/main/lib/Solvers/SMT/TUNA">[Code]</a><a href="https://api.crossref.org/works/10.1145/3795879/transform/application/x-bibtex">[BibTeX]</a></div>
+        </div>
+      </section>
+
+      <section id="internship">
+        <h2>Internship</h2>
+
+        <div class="entry-list">
+          <article class="education-item">
+            <div>
+              <h3>Alibaba Group, Qwen</h3>
+              <p class="education-degree">Post Training Algorithm Intern</p>
+              <p class="education-detail">Focus: Code</p>
+            </div>
+            <time class="education-date">Aug. 2026 – Present</time>
+          </article>
+
+          <article class="education-item">
+            <div>
+              <h3>Microsoft Research, DKI</h3>
+              <p class="education-degree">Research Intern</p>
+            </div>
+            <time class="education-date">Apr. 2026 – Aug. 2026</time>
+          </article>
+        </div>
+      </section>
+
+      <section id="education">
+        <h2>Education</h2>
+
+        <div class="entry-list">
+          <article class="education-item">
+            <div>
+              <h3>Zhejiang University</h3>
+              <p class="education-degree">Master Student, Computer Science and Technology</p>
+              <p class="education-detail">The State Key Laboratory of Blockchain and Data Security</p>
+            </div>
+            <time class="education-date">Sep. 2025 – Jun. 2028</time>
+          </article>
+
+          <article class="education-item">
+            <div>
+              <h3>Zhejiang University</h3>
+              <p class="education-degree">B.Eng., Computer Science and Technology</p>
+            </div>
+            <time class="education-date">Sep. 2021 – Jun. 2025</time>
+          </article>
+        </div>
+      </section>
+
+      <section id="awards">
+        <h2>Awards</h2>
+
+        <div class="card">
+          <ul class="award-list">
+            <li>Zhejiang Province Outstanding Graduate, 2025</li>
+            <li>Outstanding Graduate of Zhejiang University, 2025</li>
+            <li>National Scholarship (2022, 2024, 2026)</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>
+          Email: <a href="mailto:jhanyun@zju.edu.cn">jhanyun@zju.edu.cn</a><br />
+          <!-- GitHub: <a href="#"></a><br />
+          Google Scholar: <a href="#"></a> -->
+        </p>
+      </section>
+    </div>
   </main>
 
   <footer>
-    <div class="container">
-      © 2026 Hanyun Jiang. Last updated: 2026.
+    <div class="container footer-content">
+      <span>© 2026 Hanyun Jiang. Last updated: 2026.</span>
       <span class="page-views">
-        · Page views: <span id="page-view-count" aria-live="polite">Loading…</span>
+        Page views: <span id="page-view-count" aria-live="polite">Loading…</span>
       </span>
     </div>
   </footer>
