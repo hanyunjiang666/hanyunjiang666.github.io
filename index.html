@@ -172,7 +172,7 @@
           <a href="#research">Research</a>
           <a href="#projects">Projects</a>
           <a href="#publications">Publications</a>
-          <a href="#experience">Experience</a>
+          <a href="#internship">Internship</a>
           <a href="#contact">Contact</a>
         </div>
       </nav>
@@ -244,8 +244,8 @@
       </div>
     </section>
 
-    <section id="experience">
-      <h2>Experience</h2>
+    <section id="internship">
+      <h2>Internship</h2>
 
       <div class="card education-card">
         <article class="education-item">
@@ -315,11 +315,41 @@
   <footer>
     <div class="container">
       © 2026 Hanyun Jiang. Last updated: 2026.
-      <span id="busuanzi_container_page_pv" class="page-views">
-        · Page views: <span id="busuanzi_value_page_pv"></span>
+      <span class="page-views">
+        · Page views: <span id="page-view-count" aria-live="polite">Loading…</span>
       </span>
     </div>
   </footer>
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script>
+    (() => {
+      const count = document.getElementById('page-view-count');
+      const callback = 'pageViews_' + Math.random().toString(36).slice(2);
+      const script = document.createElement('script');
+      let settled = false;
+      const timeout = setTimeout(() => {
+        if (!settled) count.textContent = 'Unavailable';
+      }, 10000);
+
+      const finish = (value) => {
+        settled = true;
+        clearTimeout(timeout);
+        count.textContent = value;
+        script.remove();
+        delete window[callback];
+      };
+
+      window[callback] = (data) => {
+        const views = data && data.page_pv;
+        finish(Number.isSafeInteger(views) && views >= 0
+          ? views.toLocaleString('en-US')
+          : 'Unavailable');
+      };
+      script.async = true;
+      script.referrerPolicy = 'no-referrer-when-downgrade';
+      script.src = 'https://busuanzi.ibruce.info/busuanzi?jsonpCallback=' + callback;
+      script.onerror = () => finish('Unavailable');
+      document.head.appendChild(script);
+    })();
+  </script>
 </body>
 </html>
